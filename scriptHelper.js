@@ -31,8 +31,8 @@ function validateInput(testInput) {
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     //    console.log(validateInput(pilot));
     let launchStatus = document.getElementById("launchStatus");
-
-
+    let pilotStatus = document.getElementById("pilotStatus");
+    let copilotStatus = document.getElementById("copilotStatus");
     let fuelStatus = document.getElementById("fuelStatus");
     let cargoStatus = document.getElementById("cargoStatus");
 
@@ -52,6 +52,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
 
     // requirments for update  Shuttle Requirements
+
 
     if (fuelLevel < 10000) {
         fuelStatus.textContent = `Fuel Level too low to launch`;
