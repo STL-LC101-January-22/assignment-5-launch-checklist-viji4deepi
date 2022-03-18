@@ -35,8 +35,13 @@ window.addEventListener("load", function() {
 
         //  event.preventDefault();
 
-        formSubmission(document, list, pilot.value, coPilot.value, fuel.value, cargo.value);
-        event.preventDefault();
+        let formSubmissionValue = formSubmission(document, list, pilot.value, coPilot.value, fuel.value, cargo.value);
+        if (!formSubmissionValue) {
+            event.preventDefault();
+        }
+        if (formSubmissionValue) {
+            event.preventDefault();
+        }
     })
 
 });
