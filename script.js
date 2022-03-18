@@ -21,21 +21,19 @@ window.addEventListener("load", function() {
     let list = document.getElementById("faultyItems");
     list.style.visibility = "hidden";
     let form = document.querySelector("form");
+
+    let pilot = document.querySelector("input[name=pilotName]");
+    let coPilot = document.querySelector("input[name=copilotName]");
+    let fuel = document.querySelector("input[name=fuelLevel]");
+    let cargo = document.querySelector("input[name=cargoMass]");
     form.addEventListener("submit", function(event) {
 
-        const pilot = document.querySelector("input[name=pilotName]");
-        const coPilot = document.querySelector("input[name=copilotName]");
-        const fuel = document.querySelector("input[name=fuelLevel]");
-        const cargo = document.querySelector("input[name=cargoMass]");
 
-        let pilotStatus = document.getElementById("pilotStatus");
-        pilotStatus.textContent = `Pilot ${pilot.value} is ready for launch`;
-        let copilotStatus = document.getElementById("copilotStatus");
-        copilotStatus.textContent = `Co-pilot ${coPilot.value} is ready for launch`;
+
 
         //  event.preventDefault();
 
-        let formSubmissionValue = formSubmission(document, list, pilot.value, coPilot.value, fuel.value, cargo.value);
+        let formSubmissionValue = formSubmission(window.document, list, pilot.value, coPilot.value, fuel.value, cargo.value);
         if (!formSubmissionValue) {
             event.preventDefault();
         }
