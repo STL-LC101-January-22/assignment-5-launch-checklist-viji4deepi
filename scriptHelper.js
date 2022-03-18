@@ -52,6 +52,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
 
     // requirments for update  Shuttle Requirements
+
     if (fuelLevel < 10000) {
         fuelStatus.textContent = `Fuel Level too low to launch`;
         launchStatus.textContent = "Shuttle Not Ready For Launch";
@@ -70,7 +71,14 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     } else {
         cargoStatus.textContent = `Cargo mass low enough for launch`;
     }
-    if ((fuelLevel >= 10000) && (cargoLevel <= 10000)) {
+    if (fuelLevel < 10000 && cargoLevel > 10000) {
+        launchStatusText.textContent = "Shuttle Not Ready for Launch";
+        launchStatusStyle.style.color = "rgb(199, 37, 78)";
+        listVar.style.visibility = "visible";
+        fuelStatus.textContent = `Fuel level too low for launch`;
+        cargoStatus.textContent = `Cargo mass too heavy for launch`;
+        return false;
+    } else {
         list.style.visibility = "visible";
         launchStatus.textContent = 'Shuttle is ready for launch';
         launchStatus.style.color = "rgb(65, 159, 106)";
