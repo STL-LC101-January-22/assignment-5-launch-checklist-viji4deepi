@@ -42,7 +42,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         alert("Make sure to enter the names for each field!");
         return false;
 
-    } else if ((validateInput(fuelLevel.trim()) === "Not a Number") || (validateInput(cargoLevel.trim()) === "Not a Number")) {
+    } else if ((validateInput(fuelLevel) === "Not a Number") || (validateInput(cargoLevel) === "Not a Number")) {
         alert("Make sure to enter valid information for each field!");
         return false;
 
