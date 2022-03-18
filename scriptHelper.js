@@ -33,6 +33,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let launchStatus = document.getElementById("launchStatus");
 
 
+    let fuelStatus = document.getElementById("fuelStatus");
+    let cargoStatus = document.getElementById("cargoStatus");
+
     if ((validateInput(pilot) === "Empty") || (validateInput(copilot) === "Empty") || (validateInput(fuelLevel) === "Empty") || (validateInput(cargoLevel) === "Empty")) {
         alert("All fields are required!");
         //list.style.visibility = "hidden";
@@ -50,26 +53,26 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     // requirments for update  Shuttle Requirements
     if (fuelLevel < 10000) {
-        fuelStatus.innerText = `Fuel Level too low to launch`;
-        launchStatus.innerText = "Shuttle Not Ready For Launch";
+        fuelStatus.textContent = `Fuel Level too low to launch`;
+        launchStatus.textContent = "Shuttle Not Ready For Launch";
         launchStatus.setAttribute("style", "color:#FF0000");
         list.style.visibility = "visible";
-
+        return false;
     } else {
         fuelStatus.innerText = `Fuel level high enough for launch`;
     }
     if (cargoLevel > 10000) {
-        cargoStatus.innerText = `Cargo mass is too heavy for the shuttle to take off`;
-        launchStatus.innerText = "Shuttle Not Ready For Launch";
+        cargoStatus.textContent = `Cargo mass is too heavy for the shuttle to take off`;
+        launchStatus.textContent = "Shuttle Not Ready For Launch";
         launchStatus.setAttribute("style", "color:#FF0000");
         list.style.visibility = "visible";
-
+        return false;
     } else {
-        cargoStatus.innerText = `Cargo mass low enough for launch`;
+        cargoStatus.textContent = `Cargo mass low enough for launch`;
     }
     if ((fuelLevel >= 10000) && (cargoLevel <= 10000)) {
         list.style.visibility = "visible";
-        launchStatus.innerText = 'Shuttle is ready for launch!';
+        launchStatus.textContent = 'Shuttle is ready for launch!';
         launchStatus.style.color = "green";
         return true;
     }

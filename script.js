@@ -29,11 +29,9 @@ window.addEventListener("load", function() {
         const cargo = document.querySelector("input[name=cargoMass]");
 
         let pilotStatus = document.getElementById("pilotStatus");
-        pilotStatus.innerText = ` Pilot ${pilot.value} is Ready to Launch`;
+        pilotStatus.textContent = ` Pilot ${pilot.value} is Ready to Launch`;
         let copilotStatus = document.getElementById("copilotStatus");
-        copilotStatus.innerText = `Co-pilot ${coPilot.value} is Ready to Launch`;
-        let fuelStatus = document.getElementById("fuelStatus");
-        let cargoStatus = document.getElementById("cargoStatus");
+        copilotStatus.textContent = `Co-pilot ${coPilot.value} is Ready to Launch`;
 
         //  event.preventDefault();
 
