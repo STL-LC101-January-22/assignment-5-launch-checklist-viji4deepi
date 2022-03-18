@@ -29,17 +29,8 @@ window.addEventListener("load", function() {
     form.addEventListener("submit", function(event) {
 
 
-
-
-        //  event.preventDefault();
-
-        let formSubmissionValue = formSubmission(window.document, list, pilot.value, coPilot.value, fuel.value, cargo.value);
-        if (!formSubmissionValue) {
-            event.preventDefault();
-        }
-        if (formSubmissionValue) {
-            event.preventDefault();
-        }
+        formSubmission(window.document, list, pilot.value, coPilot.value, fuel.value, cargo.value);
+        event.preventDefault();
     })
 
 });
