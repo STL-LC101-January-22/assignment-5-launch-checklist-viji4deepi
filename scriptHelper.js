@@ -33,12 +33,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let launchStatus = document.getElementById("launchStatus");
 
 
-    if ((validateInput(pilot.trim()) === "Empty") || (validateInput(copilot.trim()) === "Empty") || (validateInput(fuelLevel.trim()) === "Empty") || (validateInput(cargoLevel.trim()) === "Empty")) {
+    if ((validateInput(pilot) === "Empty") || (validateInput(copilot) === "Empty") || (validateInput(fuelLevel) === "Empty") || (validateInput(cargoLevel) === "Empty")) {
         alert("All fields are required!");
         //list.style.visibility = "hidden";
         return false;
 
-    } else if ((validateInput(pilot.trim()) === "Is a Number") || (validateInput(copilot.trim()) === "Is a Number")) {
+    } else if ((validateInput(pilot) === "Is a Number") || (validateInput(copilot) === "Is a Number")) {
         alert("Make sure to enter the names for each field!");
         return false;
 
